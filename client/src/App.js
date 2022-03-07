@@ -4,11 +4,17 @@ import background from "./assets/background.mp4";
 
 function App() {
   return (
-    <div>
-      <video className="videoTag" autoPlay loop muted>
-        <source src={background} type="video/mp4" />
-      </video>
-    </div>
+    <section>
+      <div className="background_container">
+        <video className="videoTag" autoPlay loop muted>
+          <source src={background} type="video/mp4" />
+        </video>
+      </div>
+      {/* <div className="form_container">
+        <Registration />
+        <Login />
+      </div> */}
+    </section>
   );
 }
 
