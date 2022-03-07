@@ -4,10 +4,9 @@ const app = express();
 const cors = require("cors");
 const connection = require("./db");
 
-//database connection
+//HERE IS DATABASE CONNECTION
 connection();
 
-//middlewares
 app.use(express.json());
 app.use(cors());
 
