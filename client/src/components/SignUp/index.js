@@ -37,12 +37,12 @@ const SignUp = () => {
   return (
     <div className="signup_container">
       <div className="signup_form_container">
-        <Link to="/login">
-          <button type="button" className="white_btn">
-            Sing in
-          </button>
-        </Link>
         <form className="form_container" onSubmit={handleSubmit}>
+          <Link to="/login">
+            <button type="button" className="white_btn">
+              Sing in
+            </button>
+          </Link>
           <h1>Create Account</h1>
           <input
             type="text"

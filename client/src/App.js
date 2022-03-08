@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 // import background from "./assets/background.mp4";
 
@@ -8,6 +9,7 @@ function App() {
     <div>
       <h1>Hello World</h1>
       <SignUp></SignUp>
+      <Login></Login>
     </div>
   );
 }
