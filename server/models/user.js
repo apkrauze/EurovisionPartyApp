@@ -18,11 +18,23 @@ userSchema.methods.generateAuthToken = function () {
 
 const User = mongoose.model("user", userSchema);
 
+const complexityOptions = {
+  min: 10,
+  max: 30,
+  lowerCase: 1,
+  upperCase: 1,
+  numeric: 1,
+  symbol: 1,
+  requirementCount: 2,
+};
+
 const validate = (data) => {
   const schema = Joi.object({
     username: Joi.string().required().label("Username"),
     email: Joi.string().email().required().label("Email"),
-    password: passwordComplexity().required().label("Password"),
+    password: passwordComplexity(complexityOptions)
+      .required()
+      .label("Password"),
   });
   return schema.validate(data);
 };

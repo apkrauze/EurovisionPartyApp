@@ -1,21 +1,21 @@
 import React from "react";
 import "./App.css";
-import background from "./assets/background.mp4";
+import SignUp from "./components/SignUp";
+// import background from "./assets/background.mp4";
 
 function App() {
   return (
-    <section>
-      {/* <div className="background_container">
-        <video className="videoTag" autoPlay loop muted>
-          <source src={background} type="video/mp4" />
-        </video>
-      </div> */}
-      {/* <div className="form_container">
-        <Registration />
-        <Login />
-      </div> */}
-    </section>
+    <div>
+      <h1>Hello World</h1>
+      <SignUp></SignUp>
+    </div>
   );
 }
 
 export default App;
+
+// <div className="background_container">
+//   <video className="videoTag" autoPlay loop muted>
+//     <source src={background} type="video/mp4" />
+//   </video>
+// </div>;
