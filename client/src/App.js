@@ -1,4 +1,4 @@
-import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
 import Login from "./components/Login";
@@ -6,13 +6,15 @@ import SignUp from "./components/SignUp";
 // import background from "./assets/background.mp4";
 
 function App() {
+  const user = localStorage.getItem("token");
+
   return (
-    <div>
-      <h1>Hello World</h1>
-      <SignUp></SignUp>
-      <Login></Login>
-      <Homepage></Homepage>
-    </div>
+    <Routes>
+      {user && <Route path="/" exact element={<Homepage />} />}
+      <Route path="/signup" exact element={<SignUp />} />
+      <Route path="/login" exact element={<Login />} />
+      <Route path="/" element={<Navigate replace to="/login" />} />
+    </Routes>
   );
 }
 

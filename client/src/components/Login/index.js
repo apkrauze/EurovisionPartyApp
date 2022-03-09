@@ -50,7 +50,7 @@ const Login = () => {
             value={data.password}
             required
           />
-          {error && <div className="error_msg">{error}</div>}
+          {error && <div>{error}</div>}
           <button type="submit">Sing In</button>
         </form>
 

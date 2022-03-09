@@ -63,14 +63,10 @@ const SignUp = () => {
             value={data.password}
             required
           />
-          {error && <div className="error_msg">{error}</div>}
-          <button type="submit" className="green_btn">
-            Sing Up
-          </button>
+          {error && <div>{error}</div>}
+          <button type="submit">Sing Up</button>
           <Link to="/login">
-            <button type="button" className="blue_btn">
-              Sing in
-            </button>
+            <button type="button">Sing in</button>
           </Link>
         </form>
       </div>
