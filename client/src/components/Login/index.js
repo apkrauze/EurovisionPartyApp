@@ -30,9 +30,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login_container">
-      <div className="login_form_container">
-        <form className="form_container" onSubmit={handleSubmit}>
+    <div>
+      <div>
+        <form onSubmit={handleSubmit}>
           <h1>Login to Your Account</h1>
           <input
             type="email"
@@ -41,7 +41,6 @@ const Login = () => {
             onChange={handleChange}
             value={data.email}
             required
-            className="input"
           />
           <input
             type="password"
@@ -50,18 +49,13 @@ const Login = () => {
             onChange={handleChange}
             value={data.password}
             required
-            className="input"
           />
           {error && <div className="error_msg">{error}</div>}
-          <button type="submit" className="green_btn">
-            Sing In
-          </button>
+          <button type="submit">Sing In</button>
         </form>
 
         <Link to="/signup">
-          <button type="button" className="white_btn">
-            Sing Up
-          </button>
+          <button type="button">Sing Up</button>
         </Link>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Homepage from "./components/Homepage/Homepage";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 // import background from "./assets/background.mp4";
@@ -10,6 +11,7 @@ function App() {
       <h1>Hello World</h1>
       <SignUp></SignUp>
       <Login></Login>
+      <Homepage></Homepage>
     </div>
   );
 }
