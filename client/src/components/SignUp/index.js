@@ -2,6 +2,7 @@ import "./styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import background from "./background.mp4";
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -37,38 +38,44 @@ const SignUp = () => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
-          <h1>Create Account</h1>
-          <input
-            type="text"
-            placeholder="Username"
-            name="username"
-            onChange={handleChange}
-            value={data.username}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={handleChange}
-            value={data.email}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={handleChange}
-            value={data.password}
-            required
-          />
-          {error && <div>{error}</div>}
-          <button type="submit">Sing Up</button>
-          <Link to="/login">
-            <button type="button">Sing in</button>
-          </Link>
-        </form>
+        <video className="videoTag" autoPlay loop muted>
+          <source src={background} type="video/mp4" />
+        </video>
+
+        <div className="content">
+          <form onSubmit={handleSubmit}>
+            <h1>Create Account</h1>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              onChange={handleChange}
+              value={data.username}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleChange}
+              value={data.email}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={handleChange}
+              value={data.password}
+              required
+            />
+            {error && <div>{error}</div>}
+            <button type="submit">Sing Up</button>
+            <Link to="/login">
+              <button type="button">Sing in</button>
+            </Link>
+          </form>
+        </div>
       </div>
     </div>
   );
