@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
-import Homepage from "./components/Homepage/Homepage";
+import Room from "./components/Room/Room";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 // import background from "./assets/background.mp4";
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Routes>
-      {user && <Route path="/" exact element={<Homepage />} />}
+      {user && <Route path="/" exact element={<Room />} />}
       <Route path="/signup" exact element={<SignUp />} />
       <Route path="/login" exact element={<Login />} />
       <Route path="/" element={<Navigate replace to="/login" />} />
