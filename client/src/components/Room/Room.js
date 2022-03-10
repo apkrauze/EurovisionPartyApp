@@ -8,6 +8,9 @@ const Room = () => {
   const [room, setRoom] = useState("");
   const [showNextPage, setShowNextPage] = useState(false);
 
+  // const user = localStorage.getItem(data.username);
+  // console.log(user);
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
@@ -26,6 +29,7 @@ const Room = () => {
       {!showNextPage ? (
         <div>
           <h1>Room choice</h1>
+          {/* <p>Hello {user}</p> */}
           <input
             type="text"
             placeholder="Room..."
