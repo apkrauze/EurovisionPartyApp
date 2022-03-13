@@ -1,7 +1,11 @@
 import React from "react";
 
-function Contestants() {
-  return <div>Contestants</div>;
+function Contestants({ socket, username, room }) {
+  return (
+    <div>
+      Hello {username} welcome to {room} party
+    </div>
+  );
 }
 
 export default Contestants;

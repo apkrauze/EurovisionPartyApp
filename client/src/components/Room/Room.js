@@ -5,6 +5,7 @@ import Contestants from "../Contestants/Contestants";
 const socket = io.connect("http://localhost:3001");
 
 const Room = () => {
+  const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showNextPage, setShowNextPage] = useState(false);
 
@@ -18,7 +19,7 @@ const Room = () => {
 
   //SOCKET CONNECTION...
   const joinRoom = () => {
-    if (room !== "") {
+    if (username !== "" && room !== "") {
       socket.emit("join_room", room);
       setShowNextPage(true);
     }
@@ -29,7 +30,13 @@ const Room = () => {
       {!showNextPage ? (
         <div>
           <h1>Room choice</h1>
-          {/* <p>Hello {user}</p> */}
+          <input
+            type="text"
+            placeholder="Party name..."
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
           <input
             type="text"
             placeholder="Room..."
@@ -40,7 +47,7 @@ const Room = () => {
           <button onClick={joinRoom}>Join A Room</button>
         </div>
       ) : (
-        <Contestants socket={socket} room={room} />
+        <Contestants socket={socket} room={room} username={username} />
       )}
       <br></br>
       <div>
