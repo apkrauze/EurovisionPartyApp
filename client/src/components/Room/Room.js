@@ -27,7 +27,11 @@ const Room = () => {
     <div>
       {!showNextPage ? (
         <div>
-          <h1>Party choice {user}</h1>
+          <h1>
+            Congratulations {user}! Invite your friends and vote together for
+            you favourite artists this year!
+          </h1>
+          <h3>Party choice</h3>
           <input
             type="text"
             placeholder="Room..."
