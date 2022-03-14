@@ -5,9 +5,10 @@ import Contestants from "../Contestants/Contestants";
 const socket = io.connect("http://localhost:3001");
 
 const Room = () => {
-  const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showNextPage, setShowNextPage] = useState(false);
+
+  const user = localStorage.getItem("username");
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -16,8 +17,8 @@ const Room = () => {
 
   //SOCKET CONNECTION...
   const joinRoom = () => {
-    if (username !== "" && room !== "") {
-      socket.emit("join_room", room);
+    if (room !== "") {
+      socket.emit("join_room", { room, user });
       setShowNextPage(true);
     }
   };
@@ -26,14 +27,7 @@ const Room = () => {
     <div>
       {!showNextPage ? (
         <div>
-          <h1>Party choice</h1>
-          <input
-            type="text"
-            placeholder="Party name..."
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          />
+          <h1>Party choice {user}</h1>
           <input
             type="text"
             placeholder="Room..."
@@ -44,7 +38,7 @@ const Room = () => {
           <button onClick={joinRoom}>Join A Party</button>
         </div>
       ) : (
-        <Contestants socket={socket} room={room} username={username} />
+        <Contestants socket={socket} room={room} />
       )}
       <br></br>
       <div>

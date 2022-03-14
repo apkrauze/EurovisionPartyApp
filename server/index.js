@@ -28,8 +28,8 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   socket.on("join_room", (data) => {
-    socket.join(data);
-    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+    socket.join(data.room);
+    console.log(`User with ID: ${data.user} joined room: ${data.room}`);
   });
 });
 

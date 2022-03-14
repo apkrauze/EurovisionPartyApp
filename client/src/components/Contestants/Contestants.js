@@ -1,9 +1,10 @@
 import React from "react";
 
-function Contestants({ socket, username, room }) {
+function Contestants({ socket, room }) {
+  const user = localStorage.getItem("username");
   return (
     <div>
-      Hello {username} welcome to {room} party
+      Hello {user} welcome to {room} party
     </div>
   );
 }
