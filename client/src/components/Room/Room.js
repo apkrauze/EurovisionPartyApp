@@ -9,9 +9,6 @@ const Room = () => {
   const [room, setRoom] = useState("");
   const [showNextPage, setShowNextPage] = useState(false);
 
-  // const user = localStorage.getItem(data.username);
-  // console.log(user);
-
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
@@ -29,7 +26,7 @@ const Room = () => {
     <div>
       {!showNextPage ? (
         <div>
-          <h1>Room choice</h1>
+          <h1>Party choice</h1>
           <input
             type="text"
             placeholder="Party name..."
@@ -44,7 +41,7 @@ const Room = () => {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join A Room</button>
+          <button onClick={joinRoom}>Join A Party</button>
         </div>
       ) : (
         <Contestants socket={socket} room={room} username={username} />
