@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 import { useState } from "react";
-import Contestants from "../Contestants/Contestants";
+import Contestants from "../../screens/Contestants";
 
 const socket = io.connect("http://localhost:3001");
 
