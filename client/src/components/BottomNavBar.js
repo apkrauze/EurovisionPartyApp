@@ -48,13 +48,13 @@ const BottomNavBar = (props) => {
       </div>
       <div className="bn-tab">
         {activeTabs === "contestants" ? (
-          <GrFlag
+          <GrFlagFill
             size="35"
             color="#000"
             onClick={() => setActiveTabs("contestants")}
           />
         ) : (
-          <GrFlagFill
+          <GrFlag
             size="35"
             color="#000"
             onClick={() => setActiveTabs("contestants")}

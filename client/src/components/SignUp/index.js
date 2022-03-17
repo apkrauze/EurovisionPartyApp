@@ -2,7 +2,7 @@ import "./styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import background from "./background.mp4";
+//import background from "./background.mp4";
 
 const SignUp = () => {
   const [data, setData] = useState({
@@ -38,9 +38,9 @@ const SignUp = () => {
   return (
     <div>
       <div>
-        <video className="videoTag" autoPlay loop muted>
+        {/* <video className="videoTag" autoPlay loop muted>
           <source src={background} type="video/mp4" />
-        </video>
+        </video> */}
 
         <div className="content">
           <form onSubmit={handleSubmit}>
