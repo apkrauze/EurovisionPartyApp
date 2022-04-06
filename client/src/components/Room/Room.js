@@ -71,7 +71,6 @@ export default function Room() {
       <div>
         <input
           placeholder="Room"
-          className="joinInput mt-20"
           type="text"
           onChange={(event) => setRoom(event.target.value)}
         />

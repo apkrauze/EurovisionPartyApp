@@ -16,6 +16,7 @@
 // export default Contestants;
 
 import React, { useState, useEffect } from "react";
+//import useLocation from "react-router";
 import queryString from "query-string";
 import io from "socket.io-client";
 import BottomNavBar from "../components/BottomNavBar";
@@ -26,9 +27,10 @@ const Contestants = ({ location }) => {
   const [room, setRoom] = useState("");
   const user = localStorage.getItem("username");
 
+  //const { room } = queryString.parse(useLocation().search);
+
   useEffect(() => {
     const { room } = queryString.parse(location.search);
-    console.log(location);
 
     setRoom(room);
 
