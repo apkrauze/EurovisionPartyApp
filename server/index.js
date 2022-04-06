@@ -7,6 +7,7 @@ const { Server } = require("socket.io");
 const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
+const { addUser } = require("./users");
 
 //HERE IS DATABASE CONNECTION
 connection();
@@ -27,11 +28,19 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  socket.on("join_room", (data) => {
-    socket.join(data.room);
-    console.log(`User with ID: ${data.user} joined room: ${data.room}`);
+  socket.on("join_room", ({ room }, callback) => {
+    const { error, user } = addUser({ id: socket.id, room });
+
+    if (error) return callback(error);
+
+    socket.join(user.room);
   });
 });
 
 const port = process.env.PORT || 3001;
 server.listen(port, () => console.log(`Listening on port ${port}...`));
+
+// socket.on("join_room", (data) => {
+//   socket.join(data.room);
+//   console.log(`User with ID: ${data.user} joined room: ${data.room}`);
+// });
