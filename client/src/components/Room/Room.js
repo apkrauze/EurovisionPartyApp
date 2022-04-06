@@ -80,9 +80,7 @@ export default function Room() {
         onClick={(e) => (!room ? e.preventDefault() : null)}
         to={`/contestants?room=${room}`}
       >
-        <button className={"button mt-20"} type="submit">
-          Sign In
-        </button>
+        <button type="submit">Sign In</button>
       </Link>
     </div>
   );
